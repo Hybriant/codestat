@@ -1,0 +1,79 @@
+{
+  "name": "codestat",
+  "version": "1.0.2",
+  "description": "🚀 Beautiful CLI tool to analyze project composition and count lines of code with GitHub-inspired colors",
+  "main": "index.js",
+  "bin": {
+    "codestat": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "dev": "node bin/cli.js",
+    "install-global": "npm install -g .",
+    "test": "node test/analyzer.test-simple.js && node test/cli.test-simple.js && node test/language.test.js",
+    "test:analyzer": "node test/analyzer.test-simple.js",
+    "test:cli": "node test/cli.test-simple.js",
+    "test:language": "node test/language.test.js",
+    "test:security": "node test/security.test-simple.js",
+    "lint": "eslint src/ test/ --fix --ext .js",
+    "lint:check": "eslint src/ test/ --ext .js",
+    "type-check": "echo \"No TypeScript configuration needed\"",
+    "security-check": "npm run test:security",
+    "build": "echo \"No build step required\"",
+    "prepublishOnly": "npm test && npm run lint:check"
+  },
+  "keywords": [
+    "cli",
+    "code",
+    "analysis",
+    "statistics",
+    "lines-of-code",
+    "loc",
+    "developer-tools",
+    "productivity",
+    "github",
+    "colors",
+    "terminal",
+    "command-line",
+    "analytics",
+    "metrics",
+    "programming",
+    "languages",
+    "syntax-highlighting",
+    "caching",
+    "performance",
+    "visualization"
+  ],
+  "author": "CodeStat Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/codestat.git"
+  },
+  "homepage": "https://github.com/yourusername/codestat#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/codestat/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "cli-table3": "^0.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-node": "^11.1.0"
+  },
+  "preferGlobal": true,
+  "files": [
+    "bin/",
+    "src/",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ]
+}
