@@ -7,13 +7,13 @@
 [![npm version](https://badge.fury.io/js/codestat.svg)](https://badge.fury.io/js/codestat)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D14-brightgreen.svg)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code Quality](https://img.shields.io/badge/code_quality-A%2B-brightgreen)](https://github.com/yourusername/codestat)
-[![Security](https://img.shields.io/badge/security-verified-brightgreen)](https://github.com/yourusername/codestat)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/yourusername/codestat)
+[![Code Quality](https://img.shields.io/badge/code_quality-A%2B-brightgreen)](https://github.com/Hybriant/codestat)
+[![Security](https://img.shields.io/badge/security-verified-brightgreen)](https://github.com/Hybriant/codestat)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/Hybriant/codestat)
 
-[![Stars](https://img.shields.io/github/stars/yourusername/codestat?style=social)](https://github.com/yourusername/codestat)
-[![Forks](https://img.shields.io/github/forks/yourusername/codestat?style=social)](https://github.com/yourusername/codestat)
-[![Issues](https://img.shields.io/github/issues/yourusername/codestat)](https://github.com/yourusername/codestat/issues)
+[![Stars](https://img.shields.io/github/stars/Hybriant/codestat?style=social)](https://github.com/yHybriant/codestat)
+[![Forks](https://img.shields.io/github/forks/Hybriant/codestat?style=social)](https://github.com/Hybriant/codestat)
+[![Issues](https://img.shields.io/github/issues/Hybriant/codestat)](https://github.com/Hybriant/codestat/issues)
 
 **Transform your code analysis experience with stunning visuals and powerful insights**
 
@@ -341,7 +341,7 @@ const detailedResults = await analyzeProject(
 
 ### Setup
 ```bash
-git clone https://github.com/yourusername/codestat.git
+git clone https://github.com/Hybriant/codestat.git
 cd codestat
 npm install
 npm install-global
@@ -460,10 +460,10 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 📞 Support
 
-- 📧 **Email**: support@codestat.dev
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/codestat/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/codestat/discussions)
-- 📖 **Documentation**: [Wiki](https://github.com/yourusername/codestat/wiki)
+- 📧 **Email**: within.shell@gmail.com
+- 🐛 **Issues**: [GitHub Issues](https://github.com/Hybriant/codestat/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/Hybriant/codestat/discussions)
+- 📖 **Documentation**: [Wiki](https://github.com/Hybriant/codestat/wiki)
 
 ---
 
