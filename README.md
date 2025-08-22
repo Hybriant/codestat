@@ -469,10 +469,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 <div align="center">
 
-**Made with ❤️ by the CodeStat Team**
-
-[![Website](https://img.shields.io/badge/website-codestat.dev-blue)](https://codestat.dev)
-
 ⭐ **Star us on GitHub** if you find CodeStat useful!
 
 </div>
