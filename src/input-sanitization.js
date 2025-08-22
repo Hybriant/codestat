@@ -90,8 +90,8 @@ function sanitizeExtensions(extensionsStr) {
   const sanitizedExtensions = [];
   
   for (const ext of extensions) {
-    // Basic validation
-    if (!/^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*$/.test(ext)) {
+    // Basic validation - no dots allowed to prevent bypass attacks
+    if (!/^[a-zA-Z0-9]+$/.test(ext) || ext.length > 10) {
       result.addError(`Invalid extension format: "${ext}"`, 'extensions');
       continue;
     }
@@ -143,8 +143,8 @@ function sanitizeIgnorePatterns(patternsStr) {
       continue;
     }
     
-    // Basic format validation
-    if (!/^[a-zA-Z0-9_\-\.\*\+\?\[\]\{\}\(\)\|\\\/]+$/.test(pattern)) {
+    // Basic format validation - simplified to avoid ReDoS
+    if (pattern.length > 100 || !/^[a-zA-Z0-9_\-\.\*\/]+$/.test(pattern)) {
       result.addError(`Invalid pattern format: "${pattern}"`, 'ignore patterns');
       continue;
     }

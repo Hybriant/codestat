@@ -52,7 +52,7 @@ function validateAndResolvePath(inputPath, basePath = process.cwd()) {
   
   // Security check: ensure the resolved path is within the base path
   // This is the critical security check
-  if (!normalizedFullPath.startsWith(normalizedBasePath)) {
+  if (!normalizedFullPath.startsWith(normalizedBasePath + path.sep) && normalizedFullPath !== normalizedBasePath) {
     throw new Error('Invalid path: Target is outside the allowed directory');
   }
   
@@ -85,8 +85,12 @@ function validateExtensions(extensionsStr) {
   
   // Validate each extension
   for (const ext of extensions) {
-    if (!ext || !/^[a-zA-Z0-9]+$/.test(ext)) {
-      throw new Error(`Invalid extension: "${ext}". Extensions must be alphanumeric`);
+    if (!ext || !/^[a-zA-Z0-9]+$/.test(ext) || ext.length > 10) {
+      throw new Error(`Invalid extension: "${ext}". Extensions must be alphanumeric and under 10 characters`);
+    }
+    // Additional security check for common dangerous extensions
+    if (['exe', 'bat', 'cmd', 'com', 'scr', 'pif'].includes(ext.toLowerCase())) {
+      throw new Error(`Invalid extension: "${ext}". Executable extensions are not allowed`);
     }
   }
   
