@@ -9,9 +9,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code Quality](https://img.shields.io/badge/code_quality-A%2B-brightgreen)](https://github.com/Hybriant/codestat)
 [![Security](https://img.shields.io/badge/security-verified-brightgreen)](https://github.com/Hybriant/codestat)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/Hybriant/codestat)
+[![CI](https://github.com/Hybriant/codestat/actions/workflows/ci.yml/badge.svg)](https://github.com/Hybriant/codestat/actions/workflows/ci.yml)
+[![CD](https://github.com/Hybriant/codestat/actions/workflows/cd.yml/badge.svg)](https://github.com/Hybriant/codestat/actions/workflows/cd.yml)
 
-[![Stars](https://img.shields.io/github/stars/Hybriant/codestat?style=social)](https://github.com/yHybriant/codestat)
+[![Stars](https://img.shields.io/github/stars/Hybriant/codestat?style=social)](https://github.com/Hybriant/codestat)
 [![Forks](https://img.shields.io/github/forks/Hybriant/codestat?style=social)](https://github.com/Hybriant/codestat)
 [![Issues](https://img.shields.io/github/issues/Hybriant/codestat)](https://github.com/Hybriant/codestat/issues)
 
