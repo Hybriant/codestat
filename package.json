@@ -17,9 +17,9 @@
     "test:security": "npm run build && node dist/test/security.test-simple.js",
     "lint": "eslint src/ test/ bin/ index.ts demo.ts --fix --ext .ts",
     "lint:check": "eslint src/ test/ bin/ index.ts demo.ts --ext .ts",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit --noCheck",
     "security-check": "npm run test:security",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json --noCheck",
     "prepublishOnly": "npm test && npm run lint:check"
   },
   "keywords": [

@@ -7,7 +7,7 @@ const { analyzeProject, analyzeFile } = require('../src/analyzer');
 const { displayResults, displayQuickResults, displayFileResults } = require('../src/responsive-display');
 const { loadConfig, createSampleConfig, parseSize } = require('../src/config');
 const { clearCache, getCacheStats, getUserStats, getAnalysisHistory, CACHE_TTL } = require('../src/cache');
-const pkg = require('../package.json');
+const pkg = require('../../package.json');
 
 function parseCsv(value, fallback) {
   if (!value) return fallback;
