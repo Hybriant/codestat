@@ -48,11 +48,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/codestat.git"
+    "url": "https://github.com/Hybriant/codestat.git"
   },
-  "homepage": "https://github.com/yourusername/codestat#readme",
+  "homepage": "https://github.com/Hybriant/codestat#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/codestat/issues"
+    "url": "https://github.com/Hybriant/codestat/issues"
   },
   "engines": {
     "node": ">=14.0.0"
