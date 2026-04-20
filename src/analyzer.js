@@ -44,24 +44,28 @@ function isBinaryFile(filePath, extension, config = {}) {
   
   // For unknown extensions, try to read the first few bytes
   try {
-    const buffer = fs.readFileSync(filePath, { encoding: null });
-    if (buffer.length === 0) return false;
+    const buffer = Buffer.alloc(binaryDetectionSampleSize);
+    const fd = fs.openSync(filePath, 'r');
+    const bytesRead = fs.readSync(fd, buffer, 0, binaryDetectionSampleSize, 0);
+    fs.closeSync(fd);
+    
+    if (bytesRead === 0) return false;
+    const sampledBuffer = buffer.subarray(0, bytesRead);
     
     // Check for null bytes (common in binary files)
-    if (buffer.includes(0x00)) return true;
+    if (sampledBuffer.includes(0x00)) return true;
     
     // Check for high concentration of non-printable characters
     let nonPrintableCount = 0;
-    const sampleSize = Math.min(binaryDetectionSampleSize, buffer.length);
-    for (let i = 0; i < sampleSize; i++) {
-      const byte = buffer[i];
+    for (let i = 0; i < bytesRead; i++) {
+      const byte = sampledBuffer[i];
       if (byte < 32 && byte !== 9 && byte !== 10 && byte !== 13) {
         nonPrintableCount++;
       }
     }
     
     // If more than threshold % of the sample is non-printable, consider it binary
-    return (nonPrintableCount / sampleSize) > binaryDetectionThreshold;
+    return (nonPrintableCount / bytesRead) > binaryDetectionThreshold;
   } catch (error) {
     // If we can't read the file, assume it's not binary
     return false;
@@ -276,6 +280,12 @@ async function analyzeProject(rootPath, extensions, ignorePatterns, options = {}
   function shouldIgnore(filePath) {
     const fileName = path.basename(filePath);
     const relativePath = path.relative(rootPath, filePath);
+    const pathSegments = relativePath.split(path.sep);
+    const isHiddenPathSegment = segment => segment.startsWith('.') && segment.length > 1;
+    
+    if (!config.showHidden && pathSegments.some(isHiddenPathSegment)) {
+      return true;
+    }
     
     return ignorePatterns.some(pattern => {
       if (pattern.startsWith('.')) {
@@ -435,7 +445,11 @@ async function analyzeProject(rootPath, extensions, ignorePatterns, options = {}
           if (shouldIgnore(fullPath)) continue;
           
           try {
-            const stats = await fs.promises.stat(fullPath);
+            const stats = await fs.promises.lstat(fullPath);
+            
+            if (stats.isSymbolicLink()) {
+              continue;
+            }
             
             if (stats.isDirectory()) {
               count += await countTotalFiles(fullPath, depth + 1);
@@ -505,7 +519,7 @@ async function analyzeProject(rootPath, extensions, ignorePatterns, options = {}
           }
 
           try {
-            const stats = await fs.promises.stat(fullPath);
+            const stats = await fs.promises.lstat(fullPath);
             
             // Handle symbolic links
             if (stats.isSymbolicLink()) {

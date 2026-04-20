@@ -104,8 +104,5 @@ analysis-results/
 test-results/
 test-output/
 
-bin/
 .github
 .claude
-test/
-*test*/
