@@ -20,6 +20,8 @@
 
 </div>
 
+📘 Chinese README: [README_CN.md](README_CN.md)
+
 ## ✨ Features
 
 ### 🎨 **Beautiful Visual Output**
@@ -55,7 +57,7 @@
 npm install -g codestat
 
 # Or use npx
-npx codestat analyze
+npx codestat --help
 ```
 
 ### Basic Usage
@@ -69,6 +71,12 @@ codestat quick
 
 # Analyze specific path
 codestat analyze /path/to/project
+
+# Analyze a single file
+codestat file ./src/index.js
+
+# Initialize config file
+codestat config --init
 
 # Get help
 codestat --help
@@ -345,7 +353,7 @@ const detailedResults = await analyzeProject(
 git clone https://github.com/Hybriant/codestat.git
 cd codestat
 npm install
-npm install-global
+npm run install-global
 ```
 
 ### Testing
@@ -364,10 +372,16 @@ npm run test:language
 # Development
 npm run dev
 
-# Lint (when configured)
+# Lint (auto-fix)
 npm run lint
 
-# Build (when configured)
+# Lint check (CI-friendly)
+npm run lint:check
+
+# Security test
+npm run test:security
+
+# Build (no-op in current version)
 npm run build
 ```
 
