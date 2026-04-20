@@ -2,24 +2,24 @@
   "name": "codestat",
   "version": "1.0.2",
   "description": "🚀 Beautiful CLI tool to analyze project composition and count lines of code with GitHub-inspired colors",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
-    "codestat": "./bin/cli.js"
+    "codestat": "./dist/bin/cli.js"
   },
   "scripts": {
-    "start": "node bin/cli.js",
-    "dev": "node bin/cli.js",
+    "start": "npm run build && node dist/bin/cli.js",
+    "dev": "npm run build && node dist/bin/cli.js",
     "install-global": "npm install -g .",
-    "test": "node test/analyzer.test-simple.js && node test/cli.test-simple.js && node test/language.test.js",
-    "test:analyzer": "node test/analyzer.test-simple.js",
-    "test:cli": "node test/cli.test-simple.js",
-    "test:language": "node test/language.test.js",
-    "test:security": "node test/security.test-simple.js",
-    "lint": "eslint src/ test/ --fix --ext .js",
-    "lint:check": "eslint src/ test/ --ext .js",
-    "type-check": "echo \"No TypeScript configuration needed\"",
+    "test": "npm run build && node dist/test/analyzer.test-simple.js && node dist/test/cli.test-simple.js && node dist/test/language.test.js",
+    "test:analyzer": "npm run build && node dist/test/analyzer.test-simple.js",
+    "test:cli": "npm run build && node dist/test/cli.test-simple.js",
+    "test:language": "npm run build && node dist/test/language.test.js",
+    "test:security": "npm run build && node dist/test/security.test-simple.js",
+    "lint": "eslint src/ test/ bin/ index.ts demo.ts --fix --ext .ts",
+    "lint:check": "eslint src/ test/ bin/ index.ts demo.ts --ext .ts",
+    "type-check": "tsc --noEmit",
     "security-check": "npm run test:security",
-    "build": "echo \"No build step required\"",
+    "build": "tsc -p tsconfig.json",
     "prepublishOnly": "npm test && npm run lint:check"
   },
   "keywords": [
@@ -66,12 +66,13 @@
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-plugin-security": "^1.7.1",
-    "eslint-plugin-node": "^11.1.0"
+    "eslint-plugin-node": "^11.1.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
   },
   "preferGlobal": true,
   "files": [
-    "bin/",
-    "src/",
+    "dist/",
     "LICENSE",
     "README.md",
     "package.json"
