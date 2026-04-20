@@ -26,7 +26,7 @@ async function testAnalyzeProjectBasic() {
 
 async function run() {
   await testAnalyzeProjectBasic();
-  console.log('analyzer.test-simple.js passed');
+  console.log('analyzer.test-simple.ts passed');
 }
 
 run().catch(error => {

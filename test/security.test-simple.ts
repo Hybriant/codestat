@@ -14,7 +14,7 @@ function testRejectDangerousIgnorePatterns() {
 function run() {
   testRejectDangerousExtensionsInput();
   testRejectDangerousIgnorePatterns();
-  console.log('security.test-simple.js passed');
+  console.log('security.test-simple.ts passed');
 }
 
 try {
