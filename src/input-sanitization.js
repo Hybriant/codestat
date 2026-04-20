@@ -30,6 +30,20 @@ class ValidationResult {
  * @param {string} fieldName - The name of the field for error messages
  * @returns {ValidationResult} Validation result with sanitized string
  */
+/**
+ * Removes ASCII control characters from a string.
+ * @param {string} input - Raw input string
+ * @returns {string} String without control characters
+ */
+function stripControlCharacters(input) {
+  return [...input]
+    .filter(char => {
+      const code = char.charCodeAt(0);
+      return code !== 0 && code > 31 && code !== 127;
+    })
+    .join('');
+}
+
 function sanitizeString(input, fieldName = 'input') {
   const result = new ValidationResult();
   
@@ -39,10 +53,7 @@ function sanitizeString(input, fieldName = 'input') {
   }
   
   // Remove null bytes and control characters
-  const sanitized = input
-    .replace(/\0/g, '')
-    .replace(/[\x00-\x1F\x7F]/g, '')
-    .trim();
+  const sanitized = stripControlCharacters(input).trim();
   
   // Check for dangerous patterns
   const dangerousPatterns = [
@@ -144,7 +155,7 @@ function sanitizeIgnorePatterns(patternsStr) {
     }
     
     // Basic format validation - simplified to avoid ReDoS
-    if (pattern.length > 100 || !/^[a-zA-Z0-9_\-\.\*\/]+$/.test(pattern)) {
+    if (pattern.length > 100 || !/^[a-zA-Z0-9_./*-]+$/.test(pattern)) {
       result.addError(`Invalid pattern format: "${pattern}"`, 'ignore patterns');
       continue;
     }
@@ -164,10 +175,9 @@ function sanitizeIgnorePatterns(patternsStr) {
 /**
  * Basic path validation
  * @param {string} inputPath - Path to validate
- * @param {Object} options - Validation options
  * @returns {ValidationResult} Validation result with sanitized path
  */
-function validateAndSanitizePath(inputPath, options = {}) {
+function validateAndSanitizePath(inputPath) {
   const result = new ValidationResult();
   
   if (!inputPath || typeof inputPath !== 'string') {
@@ -178,10 +188,7 @@ function validateAndSanitizePath(inputPath, options = {}) {
   let sanitizedPath = inputPath.trim();
   
   // Remove null bytes and control characters
-  sanitizedPath = sanitizedPath
-    .replace(/\0/g, '')
-    .replace(/[\x00-\x1F\x7F]/g, '')
-    .trim();
+  sanitizedPath = stripControlCharacters(sanitizedPath).trim();
   
   // Check for path traversal
   if (sanitizedPath.includes('..') || sanitizedPath.includes('~')) {

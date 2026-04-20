@@ -2,6 +2,7 @@
  * GitHub-inspired color mapping for programming languages
  * Based on GitHub's language color palette
  */
+/* eslint-disable no-dupe-keys */
 
 const languageColors = {
   // JavaScript and TypeScript
