@@ -33,7 +33,6 @@ const languageConfig = {
       '###': ['cr', 'crystal'],
       '=begin': ['rb'],
       '=pod': ['pl', 'pm'],
-      '/*': ['js', 'ts', 'jsx', 'tsx', 'java', 'cpp', 'c', 'cs', 'go', 'rs', 'php', 'swift', 'kt', 'scala', 'dart', 'groovy', 'css', 'scss', 'sass', 'less', 'sql', 'lua', 'jsm', 'cjs', 'mjs']
     },
     end: {
       '*/': ['js', 'ts', 'jsx', 'tsx', 'java', 'cpp', 'c', 'cs', 'go', 'rs', 'php', 'swift', 'kt', 'scala', 'dart', 'groovy', 'css', 'scss', 'sass', 'less', 'sql', 'lua', 'jsm', 'cjs', 'mjs'],
@@ -43,12 +42,11 @@ const languageConfig = {
       '-->': ['html', 'htm', 'xhtml', 'xml', 'xsl', 'svg', 'vue', 'svelte', 'astro'],
       '-}': ['haskell', 'hs', 'elm', 'lhs'],
       '|#': ['racket', 'scheme'],
-      '-->': ['asp', 'aspx'],
+      '--%>': ['asp', 'aspx'],
       '--}}': ['hbs', 'handlebars'],
       '###': ['cr', 'crystal'],
       '=end': ['rb'],
-      '=cut': ['pl', 'pm'],
-      '*/': ['js', 'ts', 'jsx', 'tsx', 'java', 'cpp', 'c', 'cs', 'go', 'rs', 'php', 'swift', 'kt', 'scala', 'dart', 'groovy', 'css', 'scss', 'sass', 'less', 'sql', 'lua', 'jsm', 'cjs', 'mjs']
+      '=cut': ['pl', 'pm']
     }
   },
   
