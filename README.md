@@ -1,4 +1,4 @@
-# 🚀 CodeStat
+# CodeStat
 
 <div align="center">
 
@@ -20,33 +20,35 @@
 
 </div>
 
-## ✨ Features
+Chinese README: [README_CN.md](README_CN.md)
 
-### 🎨 **Beautiful Visual Output**
+## Features
+
+### **Beautiful Visual Output**
 - **GitHub-inspired colors** for 93+ programming languages
 - **Rich terminal output** with ASCII art and progress bars
 - **Responsive design** that adapts to your terminal size
 - **Multiple output formats**: Fancy, Simple, and JSON
 
-### 🚀 **Performance & Intelligence**
-- **⚡ Lightning fast** with async directory traversal
-- **🧠 Smart caching** for instant repeated analyses
-- **📊 Real-time progress** tracking with beautiful spinners
-- **🔍 Streaming support** for large files (10MB+)
+### **Performance & Intelligence**
+- **Lightning fast** with async directory traversal
+- **Smart caching** for instant repeated analyses
+- **Real-time progress** tracking with beautiful spinners
+- **Streaming support** for large files (10MB+)
 
-### 📈 **Advanced Analytics**
-- **🏆 Gamified experience** with milestones and achievements
-- **📅 Analysis history** with growth trends
-- **🔄 Change comparison** between analyses
-- **📋 Detailed insights** including largest files and language distribution
+### **Advanced Analytics**
+- **Gamified experience** with milestones and achievements
+- **Analysis history** with growth trends
+- **Change comparison** between analyses
+- **Detailed insights** including largest files and language distribution
 
-### 🔧 **Flexible & Extensible**
-- **⚙️ Configuration files** for project-specific settings
-- **🎯 Quick analysis** mode for rapid feedback
-- **🌐 Multi-platform** support (Linux, macOS, Windows)
-- **📦 Lightweight** with minimal dependencies
+### **Flexible & Extensible**
+- **Configuration files** for project-specific settings
+- **Quick analysis** mode for rapid feedback
+- **Multi-platform** support (Linux, macOS, Windows)
+- **Lightweight** with minimal dependencies
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -55,7 +57,7 @@
 npm install -g codestat
 
 # Or use npx
-npx codestat analyze
+npx codestat --help
 ```
 
 ### Basic Usage
@@ -70,11 +72,17 @@ codestat quick
 # Analyze specific path
 codestat analyze /path/to/project
 
+# Analyze a single file
+codestat file ./src/index.js
+
+# Initialize config file
+codestat config --init
+
 # Get help
 codestat --help
 ```
 
-## 🎯 Showcase
+## Showcase
 
 ### Basic Analysis
 ```bash
@@ -158,7 +166,7 @@ $ codestat stats
 
 </div>
 
-## 🛠️ Advanced Usage
+## Advanced Usage
 
 ### Configuration File
 
@@ -225,7 +233,7 @@ codestat config --init
 codestat config --show
 ```
 
-## 🌍 Supported Languages
+## Supported Languages
 
 CodeStat supports **93 programming languages and file types** including:
 
@@ -260,7 +268,7 @@ CodeStat supports **93 programming languages and file types** including:
 ### And Many More...
 - Shell scripts, Dockerfiles, Markdown, LaTeX, Assembly, and more!
 
-## 📊 Output Formats
+## Output Formats
 
 ### Fancy Output (Default)
 Beautiful ASCII art with colors and progress bars
@@ -297,7 +305,7 @@ Machine-readable format for integration:
 }
 ```
 
-## 🎮 Gamification Features
+## Gamification Features
 
 ### Milestones & Achievements
 - **Lines Analyzed**: Track your coding journey
@@ -311,7 +319,7 @@ Machine-readable format for integration:
 - Personal statistics dashboard
 - Historical growth trends
 
-## 🔧 API Usage
+## API Usage
 
 Use CodeStat as a Node.js module:
 
@@ -338,14 +346,14 @@ const detailedResults = await analyzeProject(
 );
 ```
 
-## 🏗️ Development
+## Development
 
 ### Setup
 ```bash
 git clone https://github.com/Hybriant/codestat.git
 cd codestat
 npm install
-npm install-global
+npm run install-global
 ```
 
 ### Testing
@@ -364,14 +372,20 @@ npm run test:language
 # Development
 npm run dev
 
-# Lint (when configured)
+# Lint (auto-fix)
 npm run lint
 
-# Build (when configured)
+# Lint check (CI-friendly)
+npm run lint:check
+
+# Security test
+npm run test:security
+
+# Build (no-op in current version)
 npm run build
 ```
 
-## 🎯 Performance Features
+## Performance Features
 
 ### Intelligent Caching
 - **Automatic caching** of analysis results
@@ -391,7 +405,7 @@ npm run build
 - **Command injection prevention**
 - **Safe file operations**
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
@@ -402,7 +416,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📈 Roadmap
+## Roadmap
 
 - [ ] **Web Interface** - Beautiful web dashboard
 - [ ] **Git Integration** - Blame, history, and commit analysis
@@ -413,7 +427,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 - [ ] **CI/CD Integration** - GitHub Actions, GitLab CI
 - [ ] **Team Features** - Collaborative analysis and sharing
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -449,27 +463,27 @@ codestat cache --stats
 codestat config --show
 ```
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **GitHub** for the color scheme inspiration
 - **Node.js** community for the amazing ecosystem
 - **All contributors** who helped make CodeStat better
 
-## 📞 Support
+## Support
 
-- 📧 **Email**: within.shell@gmail.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/Hybriant/codestat/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/Hybriant/codestat/discussions)
-- 📖 **Documentation**: [Wiki](https://github.com/Hybriant/codestat/wiki)
+- **Email**: within.shell@gmail.com
+- **Issues**: [GitHub Issues](https://github.com/Hybriant/codestat/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Hybriant/codestat/discussions)
+- **Documentation**: [Wiki](https://github.com/Hybriant/codestat/wiki)
 
 ---
 
 <div align="center">
 
-⭐ **Star us on GitHub** if you find CodeStat useful!
+**Star us on GitHub** if you find CodeStat useful!
 
 </div>
