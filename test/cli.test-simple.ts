@@ -23,7 +23,7 @@ function testCliAnalyzeJson() {
 
 function run() {
   testCliAnalyzeJson();
-  console.log('cli.test-simple.js passed');
+  console.log('cli.test-simple.ts passed');
 }
 
 try {

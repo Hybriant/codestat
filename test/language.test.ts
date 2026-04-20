@@ -13,7 +13,7 @@ function testLanguageCommentDetection() {
 
 function run() {
   testLanguageCommentDetection();
-  console.log('language.test.js passed');
+  console.log('language.test.ts passed');
 }
 
 try {
