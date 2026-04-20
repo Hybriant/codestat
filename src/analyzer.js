@@ -44,10 +44,9 @@ function isBinaryFile(filePath, extension, config = {}) {
   
   // For unknown extensions, try to read the first few bytes
   try {
-    const sampleSize = binaryDetectionSampleSize;
-    const buffer = Buffer.alloc(sampleSize);
+    const buffer = Buffer.alloc(binaryDetectionSampleSize);
     const fd = fs.openSync(filePath, 'r');
-    const bytesRead = fs.readSync(fd, buffer, 0, sampleSize, 0);
+    const bytesRead = fs.readSync(fd, buffer, 0, binaryDetectionSampleSize, 0);
     fs.closeSync(fd);
     
     if (bytesRead === 0) return false;
@@ -282,9 +281,9 @@ async function analyzeProject(rootPath, extensions, ignorePatterns, options = {}
     const fileName = path.basename(filePath);
     const relativePath = path.relative(rootPath, filePath);
     const pathSegments = relativePath.split(path.sep);
-    const isHiddenEntrySegment = segment => segment.startsWith('.') && segment.length > 1;
+    const isHiddenPathSegment = segment => segment.startsWith('.') && segment.length > 1;
     
-    if (!config.showHidden && pathSegments.some(isHiddenEntrySegment)) {
+    if (!config.showHidden && pathSegments.some(isHiddenPathSegment)) {
       return true;
     }
     
