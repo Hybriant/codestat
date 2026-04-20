@@ -368,6 +368,7 @@ function saveUserStats(stats) {
  * @returns {Object} Updated statistics and new milestones
  */
 function updateUserStats(results, fromCache = false) {
+  ensureCacheDir();
   const stats = getUserStats();
   const newMilestones = [];
   
