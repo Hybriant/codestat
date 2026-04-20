@@ -15,7 +15,8 @@ async function testAnalyzeProjectBasic() {
   });
 
   assert.strictEqual(result.totalFiles, 1, 'should find one js file');
-  assert.strictEqual(result.totalLines, 5, 'should count total lines');
+  // trailing newline is counted as a blank line by split('\n')
+  assert.strictEqual(result.totalLines, 5, 'should count total lines including trailing newline');
   assert.strictEqual(result.codeLines, 2, 'should count code lines');
   assert.strictEqual(result.commentLines, 1, 'should count comment lines');
   assert.strictEqual(result.blankLines, 2, 'should count blank lines');

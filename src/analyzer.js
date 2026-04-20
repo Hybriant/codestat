@@ -282,8 +282,9 @@ async function analyzeProject(rootPath, extensions, ignorePatterns, options = {}
     const fileName = path.basename(filePath);
     const relativePath = path.relative(rootPath, filePath);
     const pathSegments = relativePath.split(path.sep);
+    const isHiddenEntrySegment = segment => segment.startsWith('.') && segment.length > 1;
     
-    if (!config.showHidden && pathSegments.some(segment => segment.startsWith('.') && segment.length > 1)) {
+    if (!config.showHidden && pathSegments.some(isHiddenEntrySegment)) {
       return true;
     }
     
