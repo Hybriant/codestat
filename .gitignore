@@ -104,5 +104,7 @@ analysis-results/
 test-results/
 test-output/
 
-.github
+.github/*
+!.github/workflows/
+!.github/workflows/*.yml
 .claude
